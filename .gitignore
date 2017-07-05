@@ -139,3 +139,7 @@ fabric.properties
 
 # Local PHP Coding Standards Fixer config
 .php_cs
+
+/.idea/webResources.xml
+/.idea/php.xml
+/.idea/php-test-framework.xml
