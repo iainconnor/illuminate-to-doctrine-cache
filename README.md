@@ -2,6 +2,8 @@
 
 Provides a mapping between Illuminate and Doctrine Cache components.
 
+![Illuminate To Doctrine Cache](https://github.com/iainconnor/illuminate-to-doctrine-cache/raw/master/logo.png)
+
 ## Installation
 
 From composer, `composer require iainconnor/illuminate-to-doctrine-cache`.
