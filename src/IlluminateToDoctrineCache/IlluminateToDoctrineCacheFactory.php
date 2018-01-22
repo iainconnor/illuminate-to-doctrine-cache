@@ -32,13 +32,19 @@ class IlluminateToDoctrineCacheFactory
     }
 
     /**
-     * @throws NoMatchingCacheException
+     * @param string|null $driverName If null, will use the default as configured in Illuminate.
+     *
      * @return DoctrineCache
+     * @throws NoMatchingCacheException
      */
-    public function getDoctrineCacheForIlluminateCache()
+    public function getDoctrineCacheForIlluminateCache($driverName = null)
     {
+        if ( $driverName === null ) {
+            $driverName = $this->illuminateCache->getDefaultDriver();
+        }
+
         if (!isset($this->doctrineCache) || is_null($this->doctrineCache)) {
-            $illuminateCacheDriver = ucfirst(strtolower($this->illuminateCache->getDefaultDriver()));
+            $illuminateCacheDriver = ucfirst(strtolower($driverName));
 
             $cacheMethod = 'get' . $illuminateCacheDriver . 'Cache';
 
